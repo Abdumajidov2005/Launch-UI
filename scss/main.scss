@@ -582,4 +582,22 @@ nav {
   }
 }
 
-
+footer{
+  background-color: #09090b;
+  color: white;
+  .container{
+    padding: 50px 0px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    ul{
+      line-height: 35px;
+      li{
+        &:nth-of-type(1){
+          font-weight: 700;
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}
