@@ -584,4 +584,22 @@ nav .container ul li button:nth-of-type(2) {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+footer {
+  background-color: #09090b;
+  color: white;
+}
+footer .container {
+  padding: 50px 0px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+footer .container ul {
+  line-height: 35px;
+}
+footer .container ul li:nth-of-type(1) {
+  font-weight: 700;
+  padding-bottom: 15px;
 }/*# sourceMappingURL=main.css.map */
