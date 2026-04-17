@@ -25,6 +25,171 @@ ul {
   }
 }
 
+body {
+  background: black;
+  color: white;
+  transition: 0.4s;
+  position: relative;
+}
+
+.page-style {
+  position: fixed;
+  bottom: 10px;
+  z-index: 9;
+  backdrop-filter: blur(3px);
+  width: 100%;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// <neon
+body.neon {
+  background: #0a0a0a;
+  color: #00ffff;
+}
+
+.neon {
+  color: #00ffcc;
+}
+
+.mode-btn {
+  padding: 12px 25px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #00ffcc;
+  background-color: transparent;
+  color: #00ffcc;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 0 15px #00ffff;
+  }
+  cursor: pointer;
+  font-size: 18px;
+}
+
+body.neon .mode-btn {
+  background: #111;
+  color: #00ffff;
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+}
+
+body.neon .card {
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+// neon>
+
+// <blood
+body.blood {
+  background: #0a0a0a;
+  color: #ff003c;
+}
+
+.blood {
+  color: #ff003c;
+}
+
+.blood_btn {
+  padding: 12px 25px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #ff003c;
+  color: #ff003c;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow:
+      0 0 10px #ff003c,
+      0 0 20px #ff003c;
+  }
+  font-size: 18px;
+}
+
+body.blood .blood-btn {
+  box-shadow:
+    0 0 10px #ff003c,
+    0 0 20px #ff003c;
+  color: #ff003c;
+  border: 2px solid #ff003c;
+}
+
+body.blood .card {
+  border: 2px solid #ff003c;
+  box-shadow:
+    0 0 10px #ff003c,
+    0 0 20px #ff003c;
+}
+
+// blood>
+
+// <hack
+
+body.hack {
+  background: #0a0a0a;
+  color: #00ff41;
+}
+
+.hack {
+  color: #00ff41;
+}
+
+.hack_btn {
+  padding: 12px 25px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow:
+      0 0 10px #00ff41
+      0 0 20px #00ff41;
+  }
+  font-size: 18px;
+}
+
+body.hack .hack-btn {
+  box-shadow:
+    0 0 10px #00ff41,
+    0 0 20px #00ff41;
+  color: #00ff41;
+  border: 2px solid #00ff41;
+}
+
+body.hack .card {
+  border: 2px solid #00ff41;
+  box-shadow:
+    0 0 10px #00ff41,
+    0 0 20px #00ff41;
+}
+
+// hack>
+
+body.lightmode {
+  background: white;
+  color: black;
+}
+
+.light_button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 20px;
+}
+
 #loader {
   position: fixed;
   width: 100%;
@@ -58,7 +223,7 @@ ul {
 
 #content {
   text-align: center;
-  background-color: #09090b;
+
   color: white;
   h1 {
     padding-bottom: 20px;
@@ -66,8 +231,6 @@ ul {
 }
 
 nav {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 30px 0px;
     display: flex;
@@ -155,6 +318,7 @@ nav {
           border-radius: 5px;
           background-color: transparent;
           color: white;
+          @include button();
         }
         button {
           &:nth-of-type(2) {
@@ -163,7 +327,8 @@ nav {
             border: none;
             border-radius: 5px;
             background-color: white;
-            color: black;
+            color: white;
+            @include button();
           }
         }
       }
@@ -172,8 +337,6 @@ nav {
 }
 
 .hero {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     text-align: center;
@@ -190,7 +353,6 @@ nav {
       gap: 50px;
       button {
         background-color: transparent;
-        color: white;
         border: none;
         text-decoration: underline;
       }
@@ -216,7 +378,6 @@ nav {
         border: none;
         border-radius: 5px;
         background-color: rgba(255, 255, 255, 0.075);
-        color: white;
         @include button();
       }
     }
@@ -224,7 +385,6 @@ nav {
 }
 
 .s1 {
-  background-color: #09090b;
   .container {
     padding-bottom: 30px;
     .card {
@@ -234,7 +394,6 @@ nav {
     }
     .bottom {
       padding: 40px 0px;
-      color: white;
       text-align: center;
       .title {
         padding: 20px 0px;
@@ -249,10 +408,8 @@ nav {
 }
 
 .s2 {
-  background-color: #09090b;
   .container {
     padding: 50px 0px;
-    color: white;
     .title {
       padding: 30px 0px;
     }
@@ -288,8 +445,6 @@ nav {
 }
 
 .s3 {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     .title {
@@ -321,8 +476,6 @@ nav {
 }
 
 .s4 {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     .title {
@@ -346,8 +499,6 @@ nav {
 }
 
 .s5 {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     .title {
@@ -406,8 +557,6 @@ nav {
 }
 
 .s6 {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     .title {
@@ -454,8 +603,6 @@ nav {
 }
 
 .s7 {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     .title {
@@ -522,7 +669,6 @@ nav {
           border-radius: 5px;
           margin: 15px 0px;
           background-color: rgba(255, 255, 255, 0.11);
-          color: white;
           @include button();
         }
         p {
@@ -542,8 +688,6 @@ nav {
 }
 
 .s8 {
-  background-color: #09090b;
-  color: white;
   .container {
     padding: 50px 0px;
     .title {
@@ -582,18 +726,16 @@ nav {
   }
 }
 
-footer{
-  background-color: #09090b;
-  color: white;
-  .container{
+footer {
+  .container {
     padding: 50px 0px;
     display: flex;
     align-items: start;
     justify-content: space-between;
-    ul{
+    ul {
       line-height: 35px;
-      li{
-        &:nth-of-type(1){
+      li {
+        &:nth-of-type(1) {
           font-weight: 700;
           padding-bottom: 15px;
         }
