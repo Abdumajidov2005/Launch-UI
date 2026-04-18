@@ -7,6 +7,17 @@
   font-family: "Inter", sans-serif;
 }
 
+.card {
+  box-shadow: 0px 0px 10px #fdba74;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 25px #f1dd27;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -74,6 +85,11 @@ body.neon .card {
   box-shadow: 0 0 15px #00ffff;
 }
 
+body.neon .card:hover {
+  box-shadow: 0 0 25px #00ffcc, 0 0 35px #00ffcc;
+  transform: scale(1.02);
+}
+
 body.blood {
   background: #0a0a0a;
   color: #ff003c;
@@ -110,6 +126,12 @@ body.blood .blood-btn {
 body.blood .card {
   border: 2px solid #ff003c;
   box-shadow: 0 0 10px #ff003c, 0 0 20px #ff003c;
+  transition: all 0.3s ease;
+}
+
+body.blood .card:hover {
+  box-shadow: 0 0 25px #ff003c, 0 0 35px #ff003c;
+  transform: scale(1.02);
 }
 
 body.hack {
@@ -148,6 +170,11 @@ body.hack .hack-btn {
 body.hack .card {
   border: 2px solid #00ff41;
   box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+}
+
+body.hack .card:hover {
+  box-shadow: 0 0 25px #00ff41, 0 0 35px #00ff41;
+  transform: scale(1.02);
 }
 
 body.lightmode {
@@ -414,10 +441,70 @@ nav .container ul li button:nth-of-type(2):active {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.089);
   padding: 10px;
+  position: relative;
+  overflow: hidden;
 }
 .s2 .container .box .card .img {
   width: 400px;
   margin: 0 auto;
+  z-index: 2;
+}
+.s2 .container .box .card .img .palnet {
+  z-index: 6;
+}
+.s2 .container .box .card .img .planet_circle1 {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #fdba74;
+  border-radius: 50%;
+  transform: skew(-30deg);
+  transform: rotate(-30deg);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.s2 .container .box .card .img .planet_circle2 {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  width: 500px;
+  height: 300px;
+  border: 1px solid #fdba74;
+  border-radius: 50%;
+  transform: skew(20deg);
+  transform: rotate(30deg);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.s2 .container .box .card .img .planet_animation {
+  animation: rotateOrbitt 12s linear infinite;
+}
+@keyframes rotateOrbitt {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-180deg) scale(1.02);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
+}
+.s2 .container .box .card .img .planet_animation2 {
+  animation: rotateOrbitt 18s linear infinite;
+}
+@keyframes rotateOrbitt {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.02);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
 }
 .s2 .container .box .card .img img {
   text-align: center;
