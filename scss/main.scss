@@ -392,8 +392,6 @@ nav {
             transition: all 0.3s ease;
             border: none;
             border-radius: 5px;
-            background-color: white;
-            color: white;
             @include button();
           }
         }
@@ -508,11 +506,98 @@ nav {
         position: relative;
         overflow: hidden;
 
+        .tech_stack {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 90px;
+
+          .tool_animation {
+            animation: magicFloat 4s ease-in-out infinite;
+
+            @keyframes magicFloat {
+              0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
+              }
+
+              25% {
+                transform: translateY(-8px) rotate(2deg) scale(1.03);
+                box-shadow: 0 0 18px rgba(255, 140, 0, 0.5);
+              }
+
+              50% {
+                transform: translateY(-15px) rotate(0deg) scale(1.05);
+                box-shadow: 0 0 28px rgba(255, 140, 0, 0.8);
+              }
+
+              75% {
+                transform: translateY(-8px) rotate(-2deg) scale(1.03);
+                box-shadow: 0 0 18px rgba(255, 140, 0, 0.5);
+              }
+
+              100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
+              }
+            }
+          }
+
+          .tool {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #221913;
+            background-color: #432F20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            transition: all .3s ease;
+
+            &:hover {
+              transform: translateY(-10px) scale(1.05);
+              transition: 0.3s;
+              box-shadow: 0px 0px 10px #fdba74;
+            }
+
+            i {
+              text-shadow: 0px 0px 30px #fdba74;
+              color: #FAFAFA;
+              font-size: 60px;
+            }
+          }
+
+          .tool {
+            &:nth-of-type(2) {
+              margin-top: -100px;
+              animation-delay: 0.5s;
+            }
+          }
+
+          .tool {
+            &:nth-of-type(3) {
+              margin-top: 100px;
+              animation-delay: 1s;
+            }
+          }
+
+          .tool {
+            &:nth-of-type(4) {
+              margin-top: -100px;
+              animation-delay: 1.5s;
+            }
+          }
+        }
+
         .img {
           width: 400px;
           margin: 0 auto;
           z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
+          //  <planet
           .palnet {
             z-index: 6;
           }
@@ -523,9 +608,8 @@ nav {
             left: 0px;
             width: 500px;
             height: 300px;
-            border: 1px solid #fdba74;
+            border: 2px solid;
             border-radius: 50%;
-            // transform: rotate(60deg);
             transform: skew(-30deg);
             transform: rotate(-30deg);
             z-index: -1;
@@ -538,7 +622,7 @@ nav {
             left: 0px;
             width: 500px;
             height: 300px;
-            border: 1px solid #fdba74;
+            border: 2px solid;
             border-radius: 50%;
             // transform: rotate(60deg);
             transform: skew(20deg);
@@ -564,6 +648,7 @@ nav {
               }
             }
           }
+
           .planet_animation2 {
             animation: rotateOrbitt 18s linear infinite;
 
@@ -586,6 +671,10 @@ nav {
             text-align: center;
             width: 100%;
           }
+
+          // planet>
+
+
         }
 
         h2 {
@@ -594,6 +683,119 @@ nav {
 
         p {
           padding-bottom: 30px;
+        }
+
+        .rocket_animation {
+          animation: rocket 3s linear infinite;
+
+          @keyframes rocket {
+            0% {
+              transform: scale(0.8);
+              opacity: 0.8;
+            }
+
+            70% {
+              opacity: 0.3;
+            }
+
+            100% {
+              transform: scale(1.5);
+              opacity: 0;
+            }
+          }
+        }
+
+        .rocket_img {
+          width: 400px;
+          margin: 0 auto;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: 40px;
+          position: relative;
+
+          // <rocket
+          .rocket_circle {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #623E1F;
+            background-color: #6A4C37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            i {
+              font-size: 90px;
+              text-shadow: 0px 0px 30px #fdba74;
+              transform: rotate(-45deg);
+            }
+
+
+          }
+
+          .ring1 {
+            width: 220px;
+            height: 220px;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            animation-delay: 0.2s;
+          }
+
+          .ring2 {
+            width: 240px;
+            height: 240px;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            animation-delay: 0.4s;
+          }
+
+          .ring3 {
+            width: 260px;
+            height: 260px;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            animation-delay: 0.8s
+          }
+
+          .ring4 {
+            width: 280px;
+            height: 280px;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            animation-delay: 1.2s
+          }
+
+          .ring5 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            animation-delay: 1.6s;
+          }
+
+          .ring6 {
+            width: 320px;
+            height: 320px;
+            border: 1px solid;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            animation-duration: 2;
+          }
+
+          // rocket>
         }
       }
     }
@@ -640,6 +842,7 @@ nav {
 .s4 {
   .container {
     padding: 50px 0px;
+    position: relative;
 
     .title {
       text-align: center;
@@ -655,11 +858,47 @@ nav {
       }
     }
 
-    .img {
-      width: 1200px;
+    $planet-color: #000; // Sayyoraning asosiy rangi
+    $glow-color: rgba(255, 165, 0, 0.4); // Atrofdagi nurlanish (to'q sariq)
+    $light-border: rgba(255, 200, 100, 0.8); // Eng yorqin qirra
 
-      img {
-        width: 100%;
+    .img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .big_hole {
+        width: 900px;
+        height: 900px;
+        border: 1px solid #fdba74;
+        border-radius: 50%;
+        padding: 30px;
+        box-shadow: 0 -10px 50px $glow-color,
+          inset 0 15px 20px -10px $light-border,
+          inset 0 30px 60px rgba(255, 140, 0, 0.2),
+          inset 0 -20px 50px rgba(0, 0, 0, 1);
+        ;
+        transition: box-shadow 0.5s ease, transform 0.5s ease;
+        $bright-glow: rgba(255, 180, 50, 0.7);
+
+        &:hover {
+          transform: translateY(-5%); // Bir oz yuqoriga ko'tarilish effekti
+          box-shadow:
+            0 -20px 80px $bright-glow,
+            0 -10px 120px rgba(255, 100, 0, 0.3),
+            inset 0 15px 25px -5px #fff,
+            inset 0 30px 60px rgba(255, 165, 0, 0.4);
+        }
+      }
+
+      .block {
+        width: 1200px;
+        height: 600px;
+        position: absolute;
+        bottom: 45px;
+        background-color: transparent;
+        backdrop-filter: blur(100px);
+        border-radius: 50%;
       }
     }
   }
